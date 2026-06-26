@@ -25,7 +25,7 @@ const runSeeds = async () => {
     (1, 100, '{"device": "mobile"}', 'https://shopee.co.id/mobile-promo')
   `);
 
-  COUNT(*) as count FROM admins');
+  COUNT(*) as count FROM 'admins');
 if (admins[0].count === 0) {
   const hash = await bcrypt.hash('admin123', 10);
   await execute('INSERT INTO admins (username, password_hash) VALUES (?, ?)', ['admin', hash]);
