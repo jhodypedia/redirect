@@ -1,0 +1,31 @@
+<%- include('layout', { body: `
+<div class="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <div class="absolute w-[400px] h-[400px] bg-pansa-neon/20 rounded-full blur-[100px] top-1/4 left-1/4 pointer-events-none"></div>
+
+    <div class="glass-card p-8 rounded-2xl w-full max-w-md relative z-10">
+        
+        <% if (error) { %>
+            <div class="bg-rose-500/20 border border-rose-500/50 text-rose-400 p-3 rounded-lg mb-6 text-sm text-center">
+                <%= error %>
+            </div>
+        <% } %>
+
+        <form action="/login" method="POST" class="space-y-6">
+            <div>
+                <input type="text" name="username" required placeholder="Username"
+                    class="w-full bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-pansa-neon focus:ring-1 focus:ring-pansa-neon transition-all">
+            </div>
+            
+            <div>
+                <input type="password" name="password" required placeholder="Password"
+                    class="w-full bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-pansa-neon focus:ring-1 focus:ring-pansa-neon transition-all">
+            </div>
+
+            <button type="submit" 
+                class="w-full bg-pansa-neon/20 text-pansa-neon border border-pansa-neon/50 py-3 rounded-xl font-semibold hover:bg-pansa-neon hover:text-pansa-dark transition-all duration-300 neon-shadow mt-4">
+                Sign In
+            </button>
+        </form>
+    </div>
+</div>
+` }) %>
